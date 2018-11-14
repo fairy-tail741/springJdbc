@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+
+    <!--磁盘存储 path设置磁盘存储路径-->
+    <diskStore path="d:/ehcache/"></diskStore>
+
+    <!--
+    默认缓存配置 针对缓存类通用的缓存策略
+    maxElementsInMemory  最大对象数量
+    eternal  永恒的  是否永久保存  false
+    timeToIdleSeconds  闲置时间/空闲
+    timeToLiveSeconds  活跃时间
+    overflowToDisk   如果超过限制，是否存储到磁盘
+    -->
+    <defaultCache
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            overflowToDisk="true"
+    />
+
+    <!-- User缓存配置  针对某个特定的类的缓存策略
+        name后指的是类名
+    -->
+    <cache
+            name="User"
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="300"
+            timeToLiveSeconds="600"
+            overflowToDisk="true"
+    />
+
+</ehcache>
