@@ -22,7 +22,7 @@ public class jdbcTest {
         System.out.print(list.size());
     }
     @Test
-    public void t2(){
+    public void t3(){
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         UserService userService = (UserService) applicationContext.getBean("userService");
         List list = userService.userList();
